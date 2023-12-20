@@ -9,16 +9,6 @@ import java.util.List;
 
 public class LoginPageUnrecognized extends BasePage {
 
-    public LoginPageUnrecognized(TestContext context) {
-        super(context);
-    }
-
-    @FindBy(xpath = "//button[@id='landing_sign']")
-    public WebElement signInOptionsButton;
-
-    @FindBy(xpath = "//*[@class='go-btn'][@aria-labelledby='signInOpt2']")
-    public WebElement buttonGoToUnrecognizedDevice;
-
     @FindBy(css = "input#username")
     public WebElement usernameInput;
 
@@ -30,9 +20,6 @@ public class LoginPageUnrecognized extends BasePage {
 
     @FindBy(xpath = "//*[@class='link blue-button']")
     public WebElement sendCodeButton;
-
-    @FindBy(xpath = "//*[@id='authorizatonCode']")
-    public WebElement authorizationCodeButton;
 
     @FindBy(xpath = "//*[@name='radio1']")
     public WebElement rememberRadioButton;
@@ -46,9 +33,11 @@ public class LoginPageUnrecognized extends BasePage {
     @FindBy(className = "form-check-input")
     public List<WebElement> consentCheckboxes;
 
-    public MainPage loginAsUserWithUnrecognizedDevice() {
-        signInOptionsButton.click();
-        buttonGoToUnrecognizedDevice.click();
+    public LoginPageUnrecognized(TestContext context) {
+        super(context);
+    }
+
+    public NewAccountPage loginAsUserWithUnrecognizedDevice() {
         context.wait.until(ExpectedConditions.visibilityOf(usernameInput));
         usernameInput.click();
         passcodeInput.click();
@@ -60,6 +49,6 @@ public class LoginPageUnrecognized extends BasePage {
             consentCheckboxes.get(i).click();
         }
         continueButton2.click();
-        return new MainPage(context);
+        return new NewAccountPage(context);
     }
 }

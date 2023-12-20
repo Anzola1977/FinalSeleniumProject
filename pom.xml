@@ -21,7 +21,7 @@
         <logback-classic_version>1.4.14</logback-classic_version>
         <assertj-core_version>3.24.2</assertj-core_version>
         <maven-resources-plugin_version>3.3.1</maven-resources-plugin_version>
-        <maven-surefire-plugin_version>3.2.2</maven-surefire-plugin_version>
+        <maven-surefire-plugin_version>3.2.3</maven-surefire-plugin_version>
         <maven-compiler-plugin_version>3.11.0</maven-compiler-plugin_version>
     </properties>
 
