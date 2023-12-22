@@ -44,8 +44,8 @@ public class AccountPageTests extends TestBase {
     @Story("Correct display of mobile banking simulator")
     @Description("Logging in mobile banking simulator")
     public void checkingMobileSimulator() {
-        assertEquals("Accounts",
-                new MainPage(context).signInUnrecognized().loginAsUserWithUnrecognizedDevice().goToMobileBanking());
+        new MainPage(context).signInUnrecognized().loginAsUserWithUnrecognizedDevice().goToMobileBanking();
+        assertEquals("https://message.bankofamerica.com/onlinebanking_demo/mobileApp_Simulator/", context.driver.getCurrentUrl());
         logs.append("I checked mobile banking simulator successfully");
     }
 

@@ -63,7 +63,7 @@ public class AccountPage extends BasePage {
         return new MainPage(context);
     }
 
-    public String goToMobileBanking() {
+    public void goToMobileBanking() {
         context.wait.until(ExpectedConditions.elementToBeClickable(updateContactInformation));
         updateContactInformation.click();
         context.wait.until(ExpectedConditions.visibilityOf(accountPageMobileBankingComponent.mobileBankingSimulatorButton));
@@ -80,7 +80,6 @@ public class AccountPage extends BasePage {
         accountPageMobileBankingComponent.passwordField.click();
         accountPageMobileBankingComponent.passwordField.sendKeys("Andrew");
         accountPageMobileBankingComponent.logInButton.click();
-        return accountPageMobileBankingComponent.accounts.getText();
     }
 
     public String checkTransferAccounts() {
