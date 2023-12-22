@@ -37,7 +37,7 @@ public class LoginPageUnrecognized extends BasePage {
         super(context);
     }
 
-    public NewAccountPage loginAsUserWithUnrecognizedDevice() {
+    public AccountPage loginAsUserWithUnrecognizedDevice() {
         context.wait.until(ExpectedConditions.visibilityOf(usernameInput));
         usernameInput.click();
         passcodeInput.click();
@@ -49,6 +49,6 @@ public class LoginPageUnrecognized extends BasePage {
             consentCheckboxes.get(i).click();
         }
         continueButton2.click();
-        return new NewAccountPage(context);
+        return new AccountPage(context);
     }
 }

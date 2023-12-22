@@ -53,16 +53,14 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar"
                     </argLine>
-                    <systemProperties>
-                        <property>
-                            <name>allure.results.directory</name>
-                            <value>${project.basedir}/target/allure-results</value>
-                        </property>
-                        <property>
-                            <name>junit.jupiter.extensions.autodetection.enabled</name>
-                            <value>true</value>
-                        </property>
-                    </systemProperties>
+                    <systemPropertyVariables>
+                        <allure.results.directory>
+                            ${project.basedir}/target/allure-results
+                        </allure.results.directory>
+                        <junit.jupiter.extensions.autodetection.enabled>
+                            true
+                        </junit.jupiter.extensions.autodetection.enabled>
+                    </systemPropertyVariables>
                     <reportFormat>plain</reportFormat>
                 </configuration>
                 <dependencies>

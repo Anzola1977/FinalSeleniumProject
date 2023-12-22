@@ -21,11 +21,11 @@ public class LoginPageRecognized extends BasePage {
         super(context);
     }
 
-    public NewAccountPage loginAsUserWithRecognizedDevice() {
+    public AccountPage loginAsUserWithRecognizedDevice() {
         context.wait.until(ExpectedConditions.visibilityOf(usernameInput));
         usernameInput.sendKeys(ConfigurationReader.get("username"));
         passcodeInput.sendKeys(ConfigurationReader.get("passcode"));
         signInButton.click();
-        return new NewAccountPage(context);
+        return new AccountPage(context);
     }
 }

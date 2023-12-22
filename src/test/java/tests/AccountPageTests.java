@@ -57,4 +57,33 @@ public class AccountPageTests extends TestBase {
                 new MainPage(context).signInRecognized().loginAsUserWithRecognizedDevice().checkTransferAccounts());
         logs.append("I checked transfer between accounts successfully");
     }
+
+    @Test
+    @Story("Checking security center functionality")
+    @Description("Checking password updating functionality")
+    public void checkingSecurityCenter() {
+        assertEquals("Your passcode has been changed.",
+                new MainPage(context).signInRecognized().loginAsUserWithRecognizedDevice().updatePassword());
+        logs.append("I checked security center functionality (changing password) successfully");
+    }
+
+    @Test
+    @Story("Checking special offers and deals functionality")
+    @Description("Checking special offers and deals functionality")
+    public void checkingAllOffers() {
+        assertEquals("BankAmeriDeals®",
+                new MainPage(context).signInRecognized().loginAsUserWithRecognizedDevice().seeAllOffers());
+        logs.append("I checked special offers and deals functionality (view all your deals) successfully");
+    }
+
+    @Test
+    @Story("Checking account link functionality")
+    @Description("Checking account link functionality")
+    public void checkingFunctionalityAccountLink() {
+        assertEquals(5,
+                new MainPage(context).signInRecognized().loginAsUserWithRecognizedDevice().checkingAccountLinkFunctionality());
+        logs.append("I checked account link functionality (Bank of America Advantage Savings) successfully");
+    }
+
 }
+
